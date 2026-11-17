@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PrintGuard AI | 3D Print Failure Prediction</title>
+<style>
+:root{--bg:#f7f6f2;--white:#fff;--cream:#f0eee7;--text:#252a2e;--muted:#687078;--line:#e5e3dc;--blue:#2457d6;--blue2:#1945b4;--soft:#edf2ff}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 Inter,system-ui,Arial,sans-serif}
+.wrap{width:min(1080px,calc(100% - 36px));margin:auto}header{position:sticky;top:0;background:#f7f6f2ed;backdrop-filter:blur(10px);border-bottom:1px solid var(--line);z-index:2}
+.nav{height:72px;display:flex;align-items:center;justify-content:space-between}.brand{font-weight:850;font-size:1.1rem}.logo{display:inline-grid;place-items:center;background:var(--blue);color:white;width:36px;height:36px;border-radius:11px;margin-right:9px}
+nav{display:flex;gap:24px}nav a,a{color:inherit;text-decoration:none}nav a{color:var(--muted);font-size:.92rem}
+.btn{display:inline-block;background:var(--blue);color:white;padding:12px 19px;border:0;border-radius:11px;font-weight:750;cursor:pointer}.btn:hover{background:var(--blue2)}.secondary{background:white;color:var(--text);border:1px solid var(--line)}
+.hero{padding:76px 0 65px;display:grid;grid-template-columns:1.1fr .9fr;gap:38px;align-items:center}.tag{color:var(--blue);font-weight:800;text-transform:uppercase;letter-spacing:1px;font-size:.78rem}
+h1{font-size:clamp(2.6rem,5vw,4.4rem);line-height:1.05;letter-spacing:-2px;margin:16px 0}h1 span{color:var(--blue)}h2{font-size:clamp(1.8rem,3vw,2.5rem);line-height:1.15;letter-spacing:-1px;margin:10px 0}
+.lead,.muted{color:var(--muted)}.lead{font-size:1.1rem}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.art{background:var(--cream);border:1px solid var(--line);border-radius:25px;padding:24px;box-shadow:0 12px 32px #202a3610}.printer{height:250px;background:linear-gradient(145deg,#e8e6df,#faf9f5);border-radius:17px;display:grid;place-items:center;position:relative}
+.machine{width:205px;height:160px;border:9px solid #343b43;border-bottom-width:13px;border-radius:12px;position:relative}.machine:before{content:"";position:absolute;left:20px;right:20px;top:20px;height:8px;background:#343b43}.machine:after{content:"";position:absolute;left:50%;top:28px;width:12px;height:76px;background:var(--blue);transform:translateX(-50%)}.plate{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);width:150px;height:8px;background:#343b43;border-radius:8px}
+section.block{padding:62px 0}.alt{background:var(--cream)}.intro{max-width:700px;margin-bottom:28px}.cards{display:grid;grid-template-columns:repeat(5,1fr);gap:13px}.card,.info,.panel{background:white;border:1px solid var(--line);border-radius:16px;padding:19px}.card{min-height:150px}.num,.step{color:var(--blue);font-weight:850;font-size:.82rem}.card h3{font-size:1rem;line-height:1.25;margin:11px 0 5px}.card p,.info p{color:var(--muted);font-size:.88rem;margin:0}
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.info h3{margin:8px 0}
+.panel{padding:26px;box-shadow:0 12px 32px #202a360b}.form{display:grid;grid-template-columns:repeat(2,1fr);gap:17px}label{font-weight:750;display:block;margin-bottom:6px}input{width:100%;padding:12px;border:1px solid #d6d6d0;border-radius:10px;font:inherit}input:focus{outline:3px solid #dce5ff;border-color:var(--blue)}
+.hint,.note{color:var(--muted);font-size:.82rem}.actions2{margin-top:20px;display:flex;gap:10px;flex-wrap:wrap}.result{display:none;margin-top:20px;padding:17px;border-radius:12px;background:var(--soft);border:1px solid #d8e2ff}.result strong{font-size:1.08rem}
+footer{border-top:1px solid var(--line);padding:27px 0;color:var(--muted);font-size:.88rem}
+@media(max-width:850px){.hero{grid-template-columns:1fr;padding:48px 0}.cards{grid-template-columns:repeat(2,1fr)}nav{gap:12px}}
+@media(max-width:580px){nav{display:none}.cards,.three,.form{grid-template-columns:1fr}.block{padding:45px 0!important}.panel{padding:18px}h1{letter-spacing:-1.4px}}
+</style></head><body>
+<header><div class="wrap nav"><a class="brand" href="#home"><span class="logo">P</span>PrintGuard AI</a><nav><a href="#about">About</a><a href="#parameters">Parameters</a><a href="#demo">Demo</a><a href="#workflow">Workflow</a></nav><a class="btn" href="#demo">Try Demo</a></div></header>
+<main>
+<section class="wrap hero" id="home"><div><div class="tag">IDP Project · 3D Printing + Machine Learning</div><h1>Print smarter.<br><span>Predict failures.</span></h1><p class="lead">An AI-assisted project exploring how key 3D printing settings can help identify print-failure risk before a job begins.</p><div class="actions"><a class="btn" href="#demo">Explore Prediction Demo</a><a class="btn secondary" href="#about">About the Project</a></div></div><div class="art"><div class="printer"><div class="machine"><div class="plate"></div></div></div><p class="note">A clean interface for the 3D printing failure prediction project.</p></div></section>
+<section class="block alt" id="about"><div class="wrap"><div class="intro"><div class="tag">Project Overview</div><h2>What is PrintGuard AI?</h2><p class="muted">The project studies relationships between 3D printing settings and print outcomes using machine learning. A model must be trained and evaluated with real, labelled experiment data before its predictions can be considered reliable.</p></div><div class="three"><article class="info"><div class="step">01 · INPUT</div><h3>Print settings</h3><p>Record the same five settings for every print job.</p></article><article class="info"><div class="step">02 · LEARN</div><h3>Machine learning</h3><p>Train and compare models using successful and failed print records.</p></article><article class="info"><div class="step">03 · OUTPUT</div><h3>Failure prediction</h3><p>Evaluate how well the model classifies unseen print jobs.</p></article></div></div></section>
+<section class="block" id="parameters"><div class="wrap"><div class="intro"><div class="tag">Five Main Inputs</div><h2>Parameters that matter</h2><p class="muted">Start with these five inputs for a focused first model. Suitable values depend on printer, filament and slicer profile.</p></div><div class="cards">
+<article class="card"><div class="num">01</div><h3>Nozzle Temperature</h3><p>°C · Influences filament melting and extrusion.</p></article>
+<article class="card"><div class="num">02</div><h3>Bed Temperature</h3><p>°C · Influences first-layer adhesion and warping.</p></article>
+<article class="card"><div class="num">03</div><h3>Printing Speed</h3><p>mm/s · Affects extrusion consistency and layer formation.</p></article>
+<article class="card"><div class="num">04</div><h3>Layer Height</h3><p>mm · Influences layer bonding and print geometry.</p></article>
+<article class="card"><div class="num">05</div><h3>Cooling Fan Speed</h3><p>% · Controls cooling of deposited filament.</p></article></div></div></section>
+<section class="block alt" id="demo"><div class="wrap"><div class="intro"><div class="tag">Interactive Demo</div><h2>Enter your print settings</h2><p class="muted">Explore the five inputs. This page currently provides an illustrative settings check; it is not connected to a trained machine-learning model.</p></div>
+<div class="panel"><form id="f"><div class="form">
+<div><label for="nozzle">Nozzle Temperature (°C)</label><input id="nozzle" type="number" value="200" min="150" max="300" required><div class="hint">Example value: 200</div></div>
+<div><label for="bed">Bed Temperature (°C)</label><input id="bed" type="number" value="60" min="0" max="150" required></div>
+<div><label for="speed">Printing Speed (mm/s)</label><input id="speed" type="number" value="50" min="5" max="300" required></div>
+<div><label for="layer">Layer Height (mm)</label><input id="layer" type="number" value="0.20" min="0.04" max="0.6" step="0.01" required></div>
+<div><label for="fan">Cooling Fan Speed (%)</label><input id="fan" type="number" value="100" min="0" max="100" required></div></div>
+<div class="actions2"><button class="btn" type="submit">Check Settings (Demo)</button><button class="btn secondary" type="reset">Reset</button></div></form>
+<div class="result" id="r" aria-live="polite"></div><p class="note"><b>Important:</b> These broad illustrative checks are not an ML prediction and cannot guarantee print success or failure. Use manufacturer guidance and validate a trained model on real test data.</p></div></div></section>
+<section class="block" id="workflow"><div class="wrap"><div class="intro"><div class="tag">Methodology</div><h2>How the project works</h2><p class="muted">Consistent data collection is essential for a meaningful model.</p></div><div class="three"><article class="info"><div class="step">STEP 1</div><h3>Record each print</h3><p>Log five settings and the actual result: Successful or Failed.</p></article><article class="info"><div class="step">STEP 2</div><h3>Train and test</h3><p>Keep print jobs separate between training and testing; compare suitable classifiers.</p></article><article class="info"><div class="step">STEP 3</div><h3>Report honestly</h3><p>Show accuracy, precision, recall, F1-score and confusion matrix from test data.</p></article></div></div></section>
+</main><footer><div class="wrap"> <b>PrintGuard AI</b> · IDP Project · AI-Assisted 3D Printing Failure Prediction</div></footer>
+<script>
+document.getElementById('f').addEventListener('submit',function(e){e.preventDefault();let n=+nozzle.value,b=+bed.value,s=+speed.value,l=+layer.value,c=+fan.value,issues=[];
+if(n<180||n>230)issues.push('Nozzle temperature is outside a broad PLA reference range (180–230 °C).');
+if(b<40||b>70)issues.push('Bed temperature is outside a broad PLA reference range (40–70 °C).');
+if(s>100)issues.push('Printing speed is high for a basic starting profile (>100 mm/s).');
+if(l<.08||l>.32)issues.push('Layer height is outside a common general-purpose range (0.08–0.32 mm).');
+if(c<20)issues.push('Low fan speed may affect cooling for some PLA prints.');
+let box=document.getElementById('r');box.style.display='block';box.innerHTML=issues.length?'<strong>Review suggested settings</strong><ul>'+issues.map(x=>'<li>'+x+'</li>').join('')+'</ul><span>Generic prompts only. Check printer and filament recommendations.</span>':'<strong>No broad-range warning detected</strong><p>Your values are within this demo’s illustrative ranges. This does not guarantee print success.</p>';});
+</script></body></html>
